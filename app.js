@@ -1,6 +1,19 @@
-// Initialize the database
+// Initialize the database and then get data
 const dbManager = new IndexedDBManager("MyDatabase", "MyStore");
-dbManager.init().then(() => console.log("Database initialized"));
+
+document.addEventListener('DOMContentLoaded', async function () {
+    try {
+        includeHTML();
+        // Wait for database to initialize first
+        await dbManager.init();
+        console.log("Database initialized");
+        // Then get the data
+        getAllData();
+    } catch (error) {
+        console.error("Error during initialization:", error);
+    }
+});
+
 
 // Button actions
 function addData() {
@@ -42,17 +55,17 @@ function getAllData() {
         // Clear existing content
         dataList.innerHTML = '';
 
-        // Create and append user elements
-        data.forEach(user => {
-            const userDiv = document.createElement('div');
-            userDiv.classList.add('user-item'); // Optional: for styling
-            userDiv.innerHTML = `
-                <hr>
-                <h3>${user.title}</h3>
-                <p>Set 1: ${user.set1}</p>
-                <p>ID: ${user.id}</p>
+        // Create and append log elements
+        data.forEach(log => {
+            const logDiv = document.createElement('div');
+            logDiv.classList.add('user-item'); // Optional: for styling
+            logDiv.innerHTML = `
+            <p>Log ID: ${log.id}</p>
+            <h3>${log.title}</h3>
+            <p>Set 1: ${log.set1}.lbs</p>
+            <hr>
             `;
-            dataList.appendChild(userDiv);
+            dataList.appendChild(logDiv);
         });
     });
 }
