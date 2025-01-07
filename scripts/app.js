@@ -58,7 +58,7 @@ function getAllData() {
 
 //Register the service worker
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/my-pwa-app/service-worker.js', { scope: '/my-pwa-app/' })
+    navigator.serviceWorker.register('/IndexedDBManager/service-worker.js', { scope: '/IndexedDBManager/' })
         .then((registration) => {
             console.log('Service Worker registered with scope:', registration.scope);
         })
