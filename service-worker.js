@@ -1,4 +1,4 @@
-const APP_NAME = 'PWA Workout'; // Unique identifier for the app
+const APP_NAME = 'IndexedDBManager'; // Unique identifier for the app
 const CACHE_VERSION = 'v1';
 const CACHE_NAME = `${APP_NAME}-cache-${CACHE_VERSION}`;
 const APP_SCOPE = '/IndexedDBManager/';
