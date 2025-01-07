@@ -1,5 +1,5 @@
 {
-    "name": "PWA Workout",
+    "name": "IndexedDBManager",
     "short_name": "PWA Workout",
     "description": "A progressive workout app.",
     "start_url": "/IndexedDBManager/index.html",
