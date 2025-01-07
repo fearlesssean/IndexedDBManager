@@ -1,20 +1,6 @@
 // Initialize the database and then get data
 const dbManager = new IndexedDBManager("MyDatabase", "MyStore");
 
-document.addEventListener('DOMContentLoaded', async function () {
-    try {
-        includeHTML();
-        // Wait for database to initialize first
-        await dbManager.init();
-        console.log("Database initialized");
-        // Then get the data
-        getAllData();
-    } catch (error) {
-        console.error("Error during initialization:", error);
-    }
-});
-
-
 // Button actions
 function addData() {
     const title = document.getElementById("addTitle").value;

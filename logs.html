@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head w3-include-html="head.html">
-    <title>PWA Workout: Logs</title>
-    <script src="w3-include-html.js"></script>
-</head>
+<ce-header title="PWA Workout: Logs"></ce-header>
 
 <body class="center bg-warning">
-    <div w3-include-html="navbar.html"></div>
+    <ce-nav></ce-nav>
     <div class="container mt-5">
         <h1>Workout Logs</h1>
         <div class="mt-4 p-5 bg-dark text-white rounded">
             <div id="dataList"></div>
         </div>
     </div>
-    <script src="IndexedDBManager.js"></script>
-    <script src="app.js"></script>
+    <script src="scripts/bootstrap5.js"></script>
+    <script src="scripts/IndexedDBManager.js"></script>
+    <script src="scripts/custom-elements.js"></script>
+    <script src="scripts/app.js"></script>
+    <link href="styles/bootstrap5.css" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                // Wait for database to initialize first
+                await dbManager.init();
+                console.log("Database initialized");
+                // Then get the data
+                getAllData();
+            } catch (error) {
+                console.error("Error during initialization:", error);
+            }
+        });
+    </script>
 </body>
+<ce-footer></ce-footer>
 
 </html>

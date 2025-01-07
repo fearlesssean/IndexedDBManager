@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head w3-include-html="head.html">
-    <title>PWA Workout: settings</title>
-    <script src="w3-include-html.js"></script>
-</head>
+<ce-header title="PWA Workout: Settings"></ce-header>
+
 <body class="center bg-warning">
-    <div w3-include-html="navbar.html"></div>
     <div class="container mt-5">
         <h1>Settings</h1>
         <div class="mt-4 p-5 bg-dark text-white rounded">
@@ -39,8 +36,11 @@
             <button class="btn btn-primary" onclick="deleteData()">Delete</button>
         </div>
     </div>
-    <script src="IndexedDBManager.js"></script>
-    <script src="app.js"></script>
+    <script src="scripts/bootstrap5.js"></script>
+    <script src="scripts/IndexedDBManager.js"></script>
+    <script src="scripts/custom-elements.js"></script>
+    <script src="scripts/app.js"></script>
+    <link href="styles/bootstrap5.css" rel="stylesheet">
 </body>
-
+<ce-footer></ce-footer>
 </html>
